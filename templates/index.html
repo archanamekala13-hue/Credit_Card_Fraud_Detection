@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Credit Card Fraud Detection</title>
+
+<!-- Connect your existing CSS -->
+<link rel="stylesheet" href="/static/style.css">
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Credit Card Fraud Detection</h1>
+        <p>
+            Adjust the classification threshold and observe
+            how the model performance changes.
+        </p>
+    </div>
+
+
+    <!-- Threshold Section -->
+    <div class="threshold-section">
+
+        <label for="threshold">
+            Classification Threshold:
+            <strong id="thresholdValue">0.50</strong>
+        </label>
+
+        <input
+            type="range"
+            id="threshold"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.50"
+        >
+
+        <div class="range-labels">
+            <span>0.00</span>
+            <span>0.25</span>
+            <span>0.50</span>
+            <span>0.75</span>
+            <span>1.00</span>
+        </div>
+
+    </div>
+
+
+    <!-- Performance Metrics -->
+    <div class="metrics">
+
+        <!-- Accuracy -->
+        <div class="metric-card">
+            <h3>Accuracy</h3>
+            <p id="accuracy">--</p>
+        </div>
+
+        <!-- Precision -->
+        <div class="metric-card">
+            <h3>Precision</h3>
+            <p id="precision">--</p>
+        </div>
+
+        <!-- Recall -->
+        <div class="metric-card">
+            <h3>Recall</h3>
+            <p id="recall">--</p>
+        </div>
+
+        <!-- F1 Score -->
+        <div class="metric-card">
+            <h3>F1-Score</h3>
+            <p id="f1">--</p>
+        </div>
+
+    </div>
+
+
+    <!-- Confusion Matrix -->
+    <div class="matrix-section">
+
+        <h2>Confusion Matrix</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Predicted Not Fraud</th>
+                    <th>Predicted Fraud</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <th>Actual Not Fraud</th>
+
+                    <td id="tn">--</td>
+
+                    <td id="fp">--</td>
+                </tr>
+
+                <tr>
+                    <th>Actual Fraud</th>
+
+                    <td id="fn">--</td>
+
+                    <td id="tp">--</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Explanation -->
+    <div class="explanation">
+
+        <h2>How It Works</h2>
+
+        <p>
+            The classification model is trained only once.
+            The trained model produces fraud probabilities
+            for the test data.
+        </p>
+
+        <p>
+            The threshold determines whether a transaction
+            is classified as Fraud or Not Fraud.
+        </p>
+
+        <p>
+            Move the threshold slider above to see how
+            Accuracy, Precision, Recall, F1-Score and the
+            Confusion Matrix change.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Connect your existing JavaScript -->
+<script src="/static/script.js"></script>
+
+
+</body>
+
+</html>
