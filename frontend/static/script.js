@@ -57,7 +57,7 @@ async function evaluateThreshold() {
 
         const response =
             await fetch(
-                `/api/evaluate?threshold=${threshold}`
+                `https://credit-card-fraud-detection-1-f2aw.onrender.com/api/evaluate?threshold=${threshold}`
             );
 
 
